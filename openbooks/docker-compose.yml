@@ -1,0 +1,15 @@
+version: "2.1"
+services:
+  openbooks:
+    image: evanbuss/openbooks
+    container_name: openbooks
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+
+    volumes:
+      - /home/reaperfs/Drives/Data/Entertainment/Literature/Books:/books
+
+    ports:
+      - 8080:80

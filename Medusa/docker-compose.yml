@@ -1,0 +1,19 @@
+---
+version: "2.1"
+services:
+  medusa:
+    image: lscr.io/linuxserver/medusa
+    network_mode: 'host'
+    container_name: medusa
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /home/reaperfs/Drives/Data/Docker/Medusa:/config
+      - /home/reaperfs/Drives/Data/Downloads:/downloads
+      - /home/reaperfs/Drives/Data/Entertainment/Videos/Series:/tv
+      - /home/reaperfs/Drives/Data/Entertainment/Videos/PostProcessing:/PostProcessing
+    ports:
+      - 8081:8081
+    restart: unless-stopped

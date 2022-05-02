@@ -1,0 +1,16 @@
+---
+version: "2.1"
+services:
+  nextcloud:
+    image: lscr.io/linuxserver/nextcloud
+    container_name: nextcloud
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /home/reaperfs/Drives/Data/Docker/NextCloud/config:/config
+      - /home/reaperfs/Drives/Data/Entertainment:/data
+    ports:
+      - 443:443
+    restart: unless-stopped
